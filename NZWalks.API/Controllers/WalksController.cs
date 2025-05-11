@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NZWalks.API.CustomActionFilters;
 using NZWalks.API.Data;
 using NZWalks.API.Models.Domain;
 using NZWalks.API.Models.DTO;
@@ -46,27 +47,32 @@ namespace NZWalks.API.Controllers
         
         
         [HttpPost]
+        [ValidateModel]
         public async Task<IActionResult> Create([FromBody]WalkDto walkDto)
         {
-            var walk = _mapper.Map<Walk>(walkDto);
-            await _walkRepository.CreateAsync(walk);
-            var walkToReturn = _mapper.Map<WalkDto>(walk);
-            return Ok(walkToReturn);
+        
+                var walk = _mapper.Map<Walk>(walkDto);
+                await _walkRepository.CreateAsync(walk);
+                var walkToReturn = _mapper.Map<WalkDto>(walk);
+                return Ok(walkToReturn);
+        
         }
 
         [HttpPut]
         [Route("{id:guid}")]
+        [ValidateModel]
         public async Task<IActionResult> Update([FromRoute] Guid id,[FromBody] WalkDto walkDto)
         {
-            var walk = _mapper.Map<Walk>(walkDto);
-            var walkDomain = await _walkRepository.UpdateAsync(id, walk);
-            if (walkDomain == null)
-            {
-                return NotFound();
-            }
-            var walkToReturn = _mapper.Map<WalkDto>(walkDomain);
-            return Ok(walkToReturn);
-            
+        
+                var walk = _mapper.Map<Walk>(walkDto);
+                var walkDomain = await _walkRepository.UpdateAsync(id, walk);
+                if (walkDomain == null)
+                {
+                    return NotFound();
+                }
+                var walkToReturn = _mapper.Map<WalkDto>(walkDomain);
+                return Ok(walkToReturn);
+                
         }
 
         [HttpDelete]
