@@ -14,7 +14,7 @@ public class WalkDto
     public string Description { get; set; }
     
     [Required]
-    public string LengthInKm { get; set; }
+    public double LengthInKm { get; set; }
     
     public string? WalkImageUrl { get; set; }
     
