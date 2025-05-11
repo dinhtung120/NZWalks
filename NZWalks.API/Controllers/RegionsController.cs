@@ -59,7 +59,8 @@ namespace NZWalks.API.Controllers
         [Route("{id:guid}")]
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] RegionDto regionDto)
         {
-           var regionDomain = await _regionRepository.UpdateAsync(id, regionDto);
+            var region = _mapper.Map<Region>(regionDto);
+           var regionDomain = await _regionRepository.UpdateAsync(id, region);
            if (regionDomain == null)
            {
                return NotFound();

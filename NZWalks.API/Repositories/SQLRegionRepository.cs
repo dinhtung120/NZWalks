@@ -32,7 +32,7 @@ public class SQLRegionRepository : IRegionRepository
         return region;
     }
 
-    public async Task<Region?> UpdateAsync(Guid id, RegionDto region)
+    public async Task<Region?> UpdateAsync(Guid id, Region region)
     {
         var regionDomain = await _dbContext.Regions.FindAsync(id);
         if (regionDomain == null)

@@ -9,5 +9,7 @@ public class AutoMapperProfiles : Profile
     public AutoMapperProfiles()
     {
         CreateMap<Region, RegionDto>().ReverseMap();
+        CreateMap<Walk, WalkDto>().ReverseMap();
+        CreateMap<Difficulty,DifficultyDto>().ReverseMap();
     }
 }
