@@ -533,7 +533,7 @@ obj/
 /wwwroot/node_modules
 
 ### VisualStudio ###
-
+/NZWalks.API/Images
 # User-specific files
 
 # User-specific files (MonoDevelop/Xamarin Studio)
