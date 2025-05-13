@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZWalks.API", "NZWalks.API\NZWalks.API.csproj", "{959EB7D4-F15B-4F07-B763-8FFE8A53CA33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZWalks.UI", "NZWalks.UI\NZWalks.UI.csproj", "{55FE4B9B-5CAF-431E-861D-F78A437A2E33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{959EB7D4-F15B-4F07-B763-8FFE8A53CA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{959EB7D4-F15B-4F07-B763-8FFE8A53CA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{959EB7D4-F15B-4F07-B763-8FFE8A53CA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55FE4B9B-5CAF-431E-861D-F78A437A2E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55FE4B9B-5CAF-431E-861D-F78A437A2E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55FE4B9B-5CAF-431E-861D-F78A437A2E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55FE4B9B-5CAF-431E-861D-F78A437A2E33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
