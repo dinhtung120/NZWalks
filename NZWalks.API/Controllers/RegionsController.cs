@@ -1,3 +1,4 @@
+using System.Text.Json;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -17,19 +18,23 @@ namespace NZWalks.API.Controllers
     {
         private readonly IRegionRepository _regionRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger<RegionsController> _logger;
 
-        public RegionsController(IRegionRepository regionRepository, IMapper mapper)
+        public RegionsController(IRegionRepository regionRepository, 
+            IMapper mapper, ILogger<RegionsController> logger)
         {
             _regionRepository = regionRepository;
             _mapper = mapper;
+            _logger = logger;
         }
         [HttpGet]
         [Authorize(Roles = "Reader,Writer")]
         public async Task<IActionResult> GetAll()
         {
             var regionsDomains = await _regionRepository.GetAllAsync();
-
+            
             var regionsDto = _mapper.Map<List<RegionDto>>(regionsDomains);
+            
             return Ok(regionsDto);
         }
         
