@@ -1,0 +1,27 @@
+@model NZWalks.UI.Models.AddRegionViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h1>Add Region</h1>
+<form method="post">
+    <div>
+        <label class="form-label">Code</label>
+        <input class="form-control" type="text" asp-for="Code"/>
+    </div>
+    <div>
+        <label class="form-label">Name</label>
+        <input class="form-control" type="text" asp-for="Name"/>
+    </div>
+    <div>
+        <label class="form-label">Image URL</label>
+        <input class="form-control" type="text" asp-for="RegionImageUrl"/>
+        
+    </div>
+    
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
